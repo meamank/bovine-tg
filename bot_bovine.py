@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 ###################################################################
-#                         ChaddiBot                               #
-#                        Archit Khode                             #
+#                          BovineBot                              #
+#                          Aman Kumar                             #
 ###################################################################
 
 # Telegram bot library specific
@@ -30,16 +30,16 @@ logger = logging.getLogger(__name__)
 
 # Test logging
 logger.info("~~~~ ~~~~ ~~~~ ~~~~")
-logger.info("ChaddiBot")
+logger.info("BovineBot")
 logger.info("~~~~ ~~~~ ~~~~ ~~~~")
 
 
-class ChaddiBot(telegram.bot.Bot):
+class BovineBot(telegram.bot.Bot):
 
     # Custom Bot class which delegates send method handling to MQ
 
     def __init__(self, *args, is_queued_def=True, mqueue=None, **kwargs):
-        super(ChaddiBot, self).__init__(*args, **kwargs)
+        super(BovineBot, self).__init__(*args, **kwargs)
 
         # Below 2 attributes should be provided for decorator usage
         self._is_messages_queued_default = is_queued_def
@@ -50,11 +50,11 @@ class ChaddiBot(telegram.bot.Bot):
             self._msg_queue.stop()
         except:
             pass
-        super(ChaddiBot, self).__del__()
+        super(BovineBot, self).__del__()
 
     @mq.queuedmessage
     def send_message(self, *args, **kwargs):
-        return super(ChaddiBot, self).send_message(*args, **kwargs)
+        return super(BovineBot, self).send_message(*args, **kwargs)
 
 
 def main():
@@ -64,8 +64,8 @@ def main():
     token = config.tg_bot_token
 
     request = Request(con_pool_size=8)
-    chaddiBot = ChaddiBot(token, request=request, mqueue=q)
-    updater = telegram.ext.updater.Updater(bot=chaddiBot)
+    bovineBot = BovineBot(token, request=request, mqueue=q)
+    updater = telegram.ext.updater.Updater(bot=bovineBot)
 
     # Create the EventHandler and pass it your bot's token.
     # updater = Updater(config.tg_bot_token)
@@ -87,7 +87,11 @@ def main():
     dp.add_handler(CommandHandler("hi", handlers.hi))
     dp.add_handler(CommandHandler("timesince", handlers.timesince))
     dp.add_handler(CommandHandler("superpower", handlers.superpower))
-    dp.add_handler(CommandHandler("tts", handlers.tts))
+    #dp.add_handler(CommandHandler("tts", handlers.tts))
+    dp.add_handler(CommandHandler("lenny", handlers.lenny))
+    dp.add_handler(CommandHandler("lazypay", handlers.lazypay))
+    dp.add_handler(CommandHandler("credit", handlers.credit))
+    dp.add_handler(CommandHandler("slap", handlers.slap))
 
     # regular messages
     dp.add_handler(MessageHandler(Filters.text, handlers.all_text))

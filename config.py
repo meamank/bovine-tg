@@ -1,5 +1,5 @@
 # Telegram Bot API Token
-tg_bot_token = "YOUR-TG-BOT-API-TOKEN-HERE"
+tg_bot_token = "YOUR_TOKEN"
 
 # Chat ID of your testing group
 test_chat_id = '-123456789'

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 ###################################################################
-#                         ChaddiBot                               #
-#                        Archit Khode                             #
+#                         BovineBot                               #
+#                        Aman  Kumar                              #
 ###################################################################
 
 import os
@@ -53,7 +53,7 @@ def timesince_calculator(lastseen):
     return(pretty_td)
 
 def random_reply():
-    replies = ['hi', 'bc', 'mmll', '...', '🙏 NAMASKAR MANDALI 🙏']
+    replies = ['hi', 'Nise', 'Moooo', '...', '🙏 NAMASKAR Gaushala Wasiyon 🙏']
     random.seed(datetime.now())
     random_int = random.randint(0,len(replies)-1)
     return(replies[random_int])
@@ -89,20 +89,20 @@ def superpower_countdown_calc():
 
     return(pretty_td)
 
-def tts_util(text_to_convert):
+#def tts_util(text_to_convert):
 
-    outputFile = None
+#    outputFile = None
 
-    if config.tts_engine == "gTTS":
-        outputFile = 'output.mp3'
-        tts = gTTS(text_to_convert, lang='en')
-        tts.save(outputFile)
+ #   if config.tts_engine == "gTTS":
+  #      outputFile = 'output.mp3'
+  #      tts = gTTS(text_to_convert, lang='en')
+  #      tts.save(outputFile)
 
-    elif config.tts_engine == "festival":
-        outputFile = 'output.wav'
-        os.system('echo %s | text2wave -o output.wav' % text_to_convert)
+  #  elif config.tts_engine == "festival":
+   #     outputFile = 'output.wav'
+   #     os.system('echo %s | text2wave -o output.wav' % text_to_convert)
 
-    else:
-        logger.error("tts_engine was not set in config.py!")
+   # else:
+   #     logger.error("tts_engine was not set in config.py!")
 
-    return outputFile
+   # return outputFile
