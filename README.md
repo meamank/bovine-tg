@@ -1,5 +1,5 @@
-# ChaddiBot
-http://t.me/ChaddiBot
+# BovineBot
+http://t.me/BovineBot
 
 A tailor made (and mediocre) Telegram Bot written in Python 3.
 
