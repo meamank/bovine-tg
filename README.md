@@ -1,7 +1,7 @@
 # BovineBot
 http://t.me/BovineBot
 
-A tailor made (and mediocre) Telegram Bot written in Python 3.
+A Telegram Bot written in Python 3.
 
 ## Running
 
@@ -30,5 +30,5 @@ tts_engine = "gTTS"
 # tts_engine = "festival"
 ```
 
-* Run with `python3 bot_chaddi.py`.
+* Run with `python3 bot_bovine.py`.
 * Can be deployed on any EC2-like VPS. Run with `./run_prod.sh`.
